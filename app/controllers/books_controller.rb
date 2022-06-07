@@ -7,7 +7,7 @@ class BooksController < ApplicationController
     @book_new = Book.new(book_params)
     @book_new.user_id = current_user.id
     if @book_new.save
-      redirect_to book_path(@book.id)
+      redirect_to book_path(@book_new.id)
     else
       @books = Book.all
       render :index
